@@ -39,8 +39,8 @@ def main_loop():
 		try:
 			n1 = int(input("Please enter your first number: "))
 			print()
-			break	
-		except ValueError:
+			break		
+		except ValueError:  # No custom error is necessary here
 			print("\n**Please enter a valid number**\n")
 			continue
 
@@ -48,8 +48,8 @@ def main_loop():
 		try:
 			n2 = int(input("Please enter your second number: "))
 			print()
-			break	
-		except ValueError:
+			break			
+		except ValueError:  # No custom error is necessary here
 			print("\n**Please enter a valid number**\n")
 			continue
 
