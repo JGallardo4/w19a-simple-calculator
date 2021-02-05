@@ -25,12 +25,15 @@ def main_loop():
 			user_selection = int(input("Please enter your selection: "))
 			print()
 			if (user_selection < 1 or user_selection > 4):
-				raise CalculatorInputError()
+				raise CalculatorInputError("**Please enter a valid option**\n")
 			else:
 				break
-		except ValueError as err:
-			print("\n**Please enter a valid selection**\n")
+		except CalculatorInputError as err:
+			print(err)
 			continue
+		except ValueError:
+			print("\n**Please enter an integer**\n")
+			continue		
 
 	while True:
 		try:
@@ -68,7 +71,7 @@ def main_loop():
 		try:
 			response = input("Would you like to perform a new operation (y/n): ")
 			if (response != "y" and response != "n"):
-				raise CalculatorInputError("Please enter a valid selection")
+				raise CalculatorInputError("\n**Please enter a valid option**\n")
 			else:
 				if (response == "y"):
 					print("\n**\n")		
