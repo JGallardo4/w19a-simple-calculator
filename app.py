@@ -77,7 +77,7 @@ def main_loop():
 					print("\n**\n")		
 					main_loop()
 				else:
-					break	
+					quit()
 		except CalculatorInputError as err:
 			print(err)
 			continue
